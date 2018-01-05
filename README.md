@@ -1,13 +1,13 @@
 # Creating Application
-npm init -y
-npm install http express debug --save
-npm install body-parser --save
+1. npm init -y
+2. npm install http express debug --save
+3. npm install body-parser --save
 
 # Run
-npm start => packge.json (scripts: start)
+4. npm start => packge.json (scripts: start)
 
 # Watcher
-npm install -g nodemon
-npm install nodemon --save-dev
-nodemon .\bin.server.js
+5. npm install -g nodemon
+6. npm install nodemon --save-dev
+7. nodemon .\bin.server.js
 
