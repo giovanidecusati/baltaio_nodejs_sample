@@ -14,7 +14,8 @@
     "body-parser": "^1.18.2",
     "debug": "^3.1.0",
     "express": "^4.16.2",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "mongoose": "^5.0.0-rc2"
   },
   "devDependencies": {
     "nodemon": "^1.14.7"

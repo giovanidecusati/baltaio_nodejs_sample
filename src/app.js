@@ -2,8 +2,15 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const mongoose = require('mongoose');
+
 const app = express();
 const router = express.Router();
+
+// mongo connection
+// mongoose.connect('');
+
+const Product = require('./models/product');
 
 // routes
 const indexRoutes = require('./routes/index-route');

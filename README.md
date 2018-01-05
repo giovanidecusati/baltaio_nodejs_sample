@@ -2,12 +2,17 @@
 1. npm init -y
 2. npm install http express debug --save
 3. npm install body-parser --save
+4. npm install mongoose --save
 
 # Run
-4. npm start => packge.json (scripts: start)
+1. npm start => packge.json (scripts: start)
 
 # Watcher
-5. npm install -g nodemon
-6. npm install nodemon --save-dev
-7. nodemon .\bin.server.js
+1. npm install -g nodemon
+2. npm install nodemon --save-dev
+3. nodemon .\bin\server.js
 
+
+# MongoDB
+1. [https://mlab.com](https://mlab.com)
+2. [https://studio3t.com](https://studio3t.com)
