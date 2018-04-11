@@ -7,7 +7,7 @@
 # How to Run
 1. npm install
 2. npm start
-> this will check scripts:start attribute in packge.json
+> this command-line will check scripts:start attributes in packge.json
 
 # Watcher
 1. npm install -g nodemon

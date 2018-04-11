@@ -1,49 +1,26 @@
 'user strict'
+
 const ValidationContract = require('../validators/fluent-validator')
 const productRepository = require('../repositories/product-repository')
 
-exports.get = (req, res, next) => {
-  productRepository
-    .get()
-    .then(data => {
-      res.status(200).send(data)
-    })
-    .catch(e => {
-      res.status(400).send(e)
-    })
+exports.get = async (req, res, next) => {
+  var data = await productRepository.get()
+  res.status(200).send(data)
 }
 
-exports.getBySlug = (req, res, next) => {
-  productRepository
-    .getBySlug(req.params.slug)
-    .then(data => {
-      res.status(200).send(data)
-    })
-    .catch(e => {
-      res.status(400).send(e)
-    })
+exports.getBySlug = async (req, res, next) => {
+  var data = await productRepository.getBySlug(req.params.slug)
+  res.status(200).send(data)
 }
 
-exports.getById = (req, res, next) => {
-  return productRepository
-    .getById(req.params.id)
-    .then(data => {
-      res.status(200).send(data)
-    })
-    .catch(e => {
-      res.status(400).send(e)
-    })
+exports.getById = async (req, res, next) => {
+  var data = await productRepository.getById(req.params.id)
+  res.status(200).send(data)
 }
 
-exports.getByTag = (req, res, next) => {
-  return productRepository
-    .getByTag(req.params.tag)
-    .then(data => {
-      res.status(200).send(data)
-    })
-    .catch(e => {
-      res.status(400).send(e)
-    })
+exports.getByTag = async (req, res, next) => {
+  var data = await productRepository.getByTag(req.params.tag)
+  res.status(200).send(data)
 }
 
 exports.post = (req, res, next) => {
@@ -51,6 +28,7 @@ exports.post = (req, res, next) => {
   contract.hasMinLen(req.body.title, 3, 'Invalid title len.')
   contract.hasMinLen(req.body.slug, 3, 'Invalid slug len.')
   contract.hasMinLen(req.body.description, 3, 'Invalid description len.')
+  contract.isGtOrEquals(req.body.price, 0.01, 'Invalid price.')
 
   if (!contract.isValid()) {
     res

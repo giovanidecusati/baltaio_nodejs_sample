@@ -22,6 +22,10 @@ ValidationContract.prototype.isFixedLen = (value, len, message) => {
   if (value.length !== len) errors.push({ message: message })
 }
 
+ValidationContract.prototype.isGtOrEquals = (value, secondValue, message) => {
+  if (!value || value < secondValue) errors.push({ message: message })
+}
+
 ValidationContract.prototype.isEmail = (value, message) => {
   var reg = new RegExp(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)
   if (!reg.test(value)) errors.push({ message: message })
