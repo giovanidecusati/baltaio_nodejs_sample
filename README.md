@@ -1,11 +1,13 @@
-# Creating Application
+# Creating an Application
 1. npm init -y
 2. npm install http express debug --save
 3. npm install body-parser --save
 4. npm install mongoose --save
 
-# Run
-1. npm start => packge.json (scripts: start)
+# How to Run
+1. npm install
+2. npm start
+> this will check scripts:start attribute in packge.json
 
 # Watcher
 1. npm install -g nodemon
