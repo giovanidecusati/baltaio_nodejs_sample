@@ -3,6 +3,11 @@
 2. npm install http express debug --save
 3. npm install body-parser --save
 4. npm install mongoose --save
+5. npm install md5 --save
+6. npm install jsonwebtoken --save
+7. npm install sendgrid --save
+8. npm install guid --save
+
 
 # How to Run
 1. npm install

@@ -11,20 +11,24 @@ mongoose.connect(config.connectionString)
 
 // Register Schemas
 const Product = require('./models/product')
+const Order = require('./models/order')
+const Customer = require('./models/customer')
 
 // routes
 const indexRoutes = require('./routes/index-route')
 const productRoutes = require('./routes/product-route')
+const customerRoutes = require('./routes/customer-route')
+const orderRoutes = require('./routes/order-route')
 
-app.use(bodyParser.json({
-  limit: '5mb'
-}))
+// app.use(bodyParser.json({
+//   limit: '5mb'
+// }))
 
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-)
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: false
+//   })
+// )
 
 // Enable CORS
 app.use(function (req, res, next) {
@@ -37,5 +41,7 @@ app.use(function (req, res, next) {
 // Routes
 app.use('/', indexRoutes)
 app.use('/products', productRoutes)
+app.use('/customers', customerRoutes)
+app.use('/orders', orderRoutes)
 
 module.exports = app
