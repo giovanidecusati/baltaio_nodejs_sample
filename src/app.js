@@ -20,15 +20,15 @@ const productRoutes = require('./routes/product-route')
 const customerRoutes = require('./routes/customer-route')
 const orderRoutes = require('./routes/order-route')
 
-// app.use(bodyParser.json({
-//   limit: '5mb'
-// }))
+app.use(bodyParser.json({
+  limit: '5mb'
+}))
 
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: false
-//   })
-// )
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
 
 // Enable CORS
 app.use(function (req, res, next) {

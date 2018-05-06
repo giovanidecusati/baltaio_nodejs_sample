@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "5d8cdda8-59d9-4426-ad07-fe979798fb08",
+		"name": "node_sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Mouse wireless\",\n  \"slug\": \"mu233\",\n  \"description\": \"Mouse Wireless Dell\",\n  \"price\": 9.99,\n  \"active\": true,\n  \"tags\": [\"mouse\",\"dell\"],\n  \"image\": \"https://assets.forumdirect.com.au/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/1/0/1031080397_79.jpg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"giovani.decusati@hotmail.com\",\n\t\"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/customers/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Giovani Decusati\",\n\t\"email\":\"giovani.decusati@hotmail.com\",\n\t\"password\":\"123456\",\n\t\"roles\":\"user\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZWVjMjllYzY0NTM2MjhkYzQzZDVkZSIsImVtYWlsIjoiZ2lvdmFuaS5kZWN1c2F0aUBob3RtYWlsLmNvbSIsIm5hbWUiOiJHaW92YW5pIERlY3VzYXRpIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE1MjU1OTc5MDYsImV4cCI6MTUyNTY4NDMwNn0.w3cAI00bOOFmj41Fl9p9awzuw3yZ0sIYKhItCquIFM8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"items\": [\n    {\n      \"product\": \"5aeec17ec6453628dc43d5dd\",\n      \"price\": 1.99,\n      \"quantity\": 1\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

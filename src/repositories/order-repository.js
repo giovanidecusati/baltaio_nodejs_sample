@@ -11,6 +11,6 @@ exports.get = async data => {
 }
 
 exports.create = async data => {
-  var order = new Order(data)
+  let order = new Order(data)
   await order.save()
 }
